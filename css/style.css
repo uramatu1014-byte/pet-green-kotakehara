@@ -1,0 +1,433 @@
+@charset "utf-8";
+
+
+body {
+    font-family: "Zen Old Mincho", serif;
+    background-color: #F1F1F1;
+    cursor: none;
+
+}
+
+
+
+
+
+/*----------------------------
+scroll_up ｜下から上へ出現
+----------------------------*/
+.scroll_up {
+    transition: 0.8s ease-in-out;
+    transform: translateY(30px);
+    opacity: 0;
+}
+
+.scroll_up.on {
+    transform: translateY(0);
+    opacity: 1.0;
+}
+
+/*----------------------------
+  scroll_left ｜左から出現
+  ----------------------------*/
+.scroll_left {
+    -webkit-transition: 0.8s ease-in-out;
+    -moz-transition: 0.8s ease-in-out;
+    -o-transition: 0.8s ease-in-out;
+    transition: 0.8s ease-in-out;
+    transform: translateX(-30px);
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+}
+
+.scroll_left.on {
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+    -moz-opacity: 1.0;
+    transform: translateX(0);
+}
+
+/*----------------------------
+  scroll_right ｜右から出現
+  ----------------------------*/
+.scroll_right {
+    -webkit-transition: 0.8s ease-in-out;
+    -moz-transition: 0.8s ease-in-out;
+    -o-transition: 0.8s ease-in-out;
+    transition: 0.8s ease-in-out;
+    transform: translateX(30px);
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+}
+
+.scroll_right.on {
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+    -moz-opacity: 1.0;
+    transform: translateX(0);
+}
+
+.cursor__ball {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+}
+
+.cursor__ball circle {
+    fill: white;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+}
+
+.top {
+    margin-top: 50px;
+    position: relative;
+}
+
+.botann {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+}
+
+.logo {
+    width: 123px;
+}
+
+.tel {
+    height: 123px;
+    width: 279px;
+    border-radius: 100px;
+}
+
+.moji {
+    margin-top: 80px;
+}
+
+.imgtop {
+    margin-top: 50px;
+}
+
+.about {
+    margin-top: 200px;
+    margin-bottom: 50px;
+}
+
+
+.aboutin {
+    margin-top: 100px;
+
+}
+
+.abouttext {
+    /* margin-top: 50px;
+    margin-right: 100px; */
+
+}
+
+h1 {
+    color: #276EA1;
+}
+
+.divtext {
+    padding: 30px;
+}
+
+.text {
+    color: #276EA1;
+    font-size: 24px;
+}
+
+.option {
+    margin-top: 200px;
+}
+
+
+.option {
+    padding: 50px;
+}
+
+/* wrapper１と２のホバーが反映されない（画像暗くなる） */
+.image-wrapper1 {
+    position: relative;
+    display: block;
+    background-image: url(../images/menu.png);
+    width: 100%;
+    height: 450px;
+    border-radius: 57px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.5s;
+
+}
+
+.image-wrapper1::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 57px;
+}
+
+.image-wrapper1:hover::before {
+    opacity: 1;
+    border-radius: 57px;
+}
+
+.image-wrapper2 {
+    position: relative;
+    display: block;
+    background-image: url(../images/hotel.png);
+    width: 100%;
+    height: 450px;
+    border-radius: 57px;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.5s;
+}
+
+.image-wrapper2::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s;
+    border-radius: 57px;
+}
+
+.image-wrapper2:hover::before {
+    opacity: 1;
+    border-radius: 57px;
+}
+
+.image-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: aliceblue;
+    font-size: 30px;
+    z-index: 1;
+
+}
+
+/* 岩本追加分 */
+
+.about {
+    margin-bottom: 150px;
+}
+
+.about_wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about_wrapper_table td {
+    vertical-align: top;
+    padding: 10px;
+}
+
+.darken-on-hover {
+    /* 通常時の明るさ (例: 100% または 1) */
+    filter: brightness(1);
+    /* スムーズなアニメーションのためにトランジションを設定 */
+    transition: filter 0.3s ease;
+}
+
+.darken-on-hover:hover {
+    /* ホバー時の明るさ (例: 50% または 0.5 で暗くする) */
+    filter: brightness(0.5);
+}
+
+#contact {
+    background-image: url(../images/footer.jpg);
+    min-height: 560px;
+    text-align: center;
+}
+
+.botann2 {
+    font-size: 50px;
+    border-radius: 50px;
+    max-width: 600px;
+    height: 150px;
+}
+
+.bi-instagram {
+    font-size: 30px;
+}
+
+.contact1 {
+    margin-top: 180px;
+    padding-top: 180px;
+}
+
+.time {
+    margin-top: 30px;
+}
+
+.copy {
+    margin-top: 4cqi;
+}
+
+.only-sp,
+.only-sp-500 {
+    display: none;
+}
+
+.only-pc,
+.only-pc-500 {
+    display: block;
+}
+
+@media screen and (max-width:1100px) {
+    .botann {
+        display: none !important;
+    }
+
+    .moji {
+        margin-top: 40px;
+    }
+
+    .aboutin {
+        margin-left: auto;
+    }
+
+    .imgabout {
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    .text2 {
+        font-size: 15px;
+    }
+
+    .image-wrapper1 {
+        height: 300px;
+    }
+
+    .image-wrapper2 {
+        height: 300px;
+    }
+
+    .image-wrapper2 {
+        background-position: right;
+    }
+
+
+    td {
+        font-size: 15px;
+
+    }
+
+    .about_wrapper_table {
+        width: 100%;
+    }
+
+    .footertel {
+        font-size: 20px;
+    }
+
+    .only-sp {
+        display: block;
+    }
+
+    .only-pc {
+        display: none;
+    }
+
+    .cursor {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .imgtop {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .container {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    .top {
+        background-image: url(../images/gaikann.png );
+        padding-top: 20px;
+        padding-bottom: 80px;
+        margin-top: 0px;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    .row {
+        margin: 0px;
+    }
+
+    .moji {
+        position: relative;
+        z-index: 2;
+        margin-top: -65px;
+    }
+
+    .about {
+        margin-top: 200px;
+        margin-bottom: 10px;
+    }
+
+    .aboutin {
+        margin-top: 66px;
+    }
+
+    .divtext {
+        padding: 60px;
+    }
+
+    .option {
+        margin-top: 60px;
+        padding: 20px;
+    }
+
+    .image-wrapper2 {
+        background-position: right;
+    }
+
+    .text2 {
+        font-size: 16px;
+        padding: 0 50px 0 50px;
+
+    }
+
+    .botann2 {
+        font-size: 25px;
+    }
+
+    .only-sp-500 {
+        display: block;
+
+    }
+
+    .only-pc-500 {
+        display: none;
+    }
+
+}
